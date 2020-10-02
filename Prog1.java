@@ -1,72 +1,86 @@
 public class Prog1
 {
-   public static void main(String args[])
-   {
-       Employee ob1=new Employee("ABC",1234);
-       ob1.display();
-       
-       Scientist ob2=new Scientist("xyz",4567,98,"15 years teaching experience in IIT");
-       ob2.display();
-       
-       DScientist ob3=new DScientist("PQR",5678,65,"3 years teaching experience in NIT","Best Teacher");
-       ob3.display();
-   }
+  public static void main(String ags[])
+  {
+      Parent obj=new Parent();
+      Parent ref;
+      ref=obj;
+      ref.show();
+      
+      Child1 obj1=new Child1();
+      Child1 ref1;
+      ref1=obj1;
+      ref1.show();
+      
+      Child2 obj2=new Child2();
+      Child2 ref2;
+      ref2=obj2;
+      ref2.show();
+      
+      Child3 obj3=new Child3();
+      Child3 ref3;
+      ref3=obj3;
+      ref3.show();
+  }
 }
-class Employee
+
+
+class Parent
 {
-    String name;
-    int id;
-    Employee(String n,int i)
+    int x;
+    Parent()
     {
-        name=n;
-        id=i;
+        x=10;
     }
-    
-    public void display()
+    public void show()
     {
-        System.out.println(" Base class:");
-        System.out.println("Name is ="+name);
-        System.out.println("Id is="+id);
+        System.out.println("The value of x is ="+x);
     }
 }
 
-class Scientist extends Employee
+class Child1 extends Parent
 {
-    int no_of_publication;
-    String experience;
-    Scientist(String n,int i,int no,String e)
+    int a;
+    Child1()
     {
-        super(n,i);
-       no_of_publication=no;
-      experience=e;
-    
+        super();
+        a=5;
     }
-    public void display()
+    public void show()
     {
-        System.out.println("1st Derived class:");
-        System.out.println("Name is ="+name);
-        System.out.println("Id is="+id);
-        System.out.println("No.of Publication:"+no_of_publication);
-        System.out.println("Experience:"+experience);
+        System.out.println("The value of x is ="+x);
+           System.out.println("The value of a ="+a);
     }
 }
 
-class DScientist extends Scientist
+class Child2 extends Parent
 {
-    String award;
-    DScientist(String n,int i,int no,String e,String a)
+    int b;
+    Child2()
+            {
+               super();
+               b=15;
+            }
+    public void show()
     {
-        super(n,i,no,e);
-        award=a;
-    }
-    public void display()
-    {
-        System.out.println("2nd Derived class:");
-        System.out.println("Name is ="+name);
-        System.out.println("Id is="+id);
-        System.out.println("No.of Publication:"+no_of_publication);
-        System.out.println("Experience:"+experience);
-        System.out.println("Award:"+award);
+        System.out.println("The value of x is ="+x);
+        System.out.println("The value of b ="+b);
     }
 }
+
+class Child3 extends Parent
+{
+    int c;
+    Child3()
+            {
+               super();
+               c=20;
+            }
+    public void show()
+    {
+       System.out.println("The value of x is ="+x);
+         System.out.println("The value of c ="+c);
+    }
+}
+
 
